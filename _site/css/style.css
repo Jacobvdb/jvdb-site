@@ -1,3 +1,5 @@
+
+
        /* Light Theme (Default) */
        :root {
         --background-color: #ffffff;
@@ -14,6 +16,11 @@
       
       /* Apply the theme */
       body {
+        font-family: var(--wa-font-family-body);
+        font-size: var(--wa-font-size-m);
+        font-weight: var(--wa-font-weight-body);
+        line-height: var(--wa-line-height-normal);
+        color: var(--wa-color-text-normal);
         background-color: var(--background-color);
         color: var(--text-color);
         transition: background-color 0.3s ease, color 0.3s ease;
