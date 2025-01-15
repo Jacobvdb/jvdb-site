@@ -11,6 +11,6 @@ title: "Jacob van den Berg"
 
 ## {{ post.data.subtitle }}
 
-{{ post.data.descriptiont }} 
+{{ post.data.description }} 
 
 {%  endfor %} 
