@@ -14,5 +14,10 @@
   },
   "engines": {
     "node": "22.9.0"
-  }
+  },
+  "scripts": {
+    "clean": "rm -rf _site",
+  "build": "npx @11ty/eleventy",
+  "deploy": "npm run clean && npm run build && gcloud storage cp -r _site/* gs://www.jacobvandenberg.co/"
+}
 }
