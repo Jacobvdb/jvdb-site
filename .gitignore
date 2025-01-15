@@ -10,6 +10,7 @@ node_modules
 js/
 build/
 dist/
+_site/
 .vscode
 yarn-error.log
 yarn.lock
