@@ -7,7 +7,6 @@
 .bundle
 .nvmrc
 node_modules
-js/
 build/
 dist/
 _site/
