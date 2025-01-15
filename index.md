@@ -7,8 +7,10 @@ title: "Jacob van den Berg"
 
 {% for post in collections.post %}
 
-<a href=" {{ post.url }} "><h2>{{ post.data.title }}</h2></a>
+### <a href=" {{ post.url }} "><h2>{{ post.data.title }}</h2></a>
 
-<p>{{ post.content }} </p>
+## {{ post.data.subtitle }}
+
+{{ post.data.descriptiont }} 
 
 {%  endfor %} 
