@@ -42,6 +42,20 @@ wa-menu-item[appearance~="accent"] {
   --text-color: var(--wa-color-accent-text) !important;
 }
 
+body {
+  font-family: var(--wa-font-family-body);
+  font-size: var(--wa-font-size-m);
+  font-weight: var(--wa-font-weight-body);
+  line-height: var(--wa-line-height-normal);
+  color: var(--wa-color-text-normal);
+  background-color: var(--background-color);
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+a {
+  color: var(--link-color);
+}
+
       /* Header Layout */
 .site-header {
   display: flex;
@@ -70,7 +84,15 @@ wa-menu-item[appearance~="accent"] {
   align-items: center;
 }
 
+.post-title {
+  text-decoration: none;
+  color: inherit; /* This will keep the default text color */
+}
 
+.post-title:hover {
+  /* Optional: add hover effect */
+  color: var(--wa-color-gray-70); /* Or any color you prefer */
+}
 
 /* Dropdown Button Styling */
 wa-button a {

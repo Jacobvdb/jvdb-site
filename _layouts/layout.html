@@ -6,16 +6,11 @@ layout: "default.html"
    
 <!-- the index listing page -->
 
-
-{% for post in collections.post %}
-
-<h1><a href=" {{ post.url }} "><h2>{{ post.data.title }}</h2></a></h1>
-
-<h2>{{ post.data.subtitle }} </h2>
-
-{{ post.data.description }} 
-
-
-{%  endfor %} 
+{% assign sortedPosts = collections.post | sort: "date" | reverse %}
+{% for post in sortedPosts %}
+<a href="{{ post.url }}" class="post-title"><h2>{{ post.data.title }}</h2></a>
+<h2>{{ post.data.subtitle }}</h2>
+{{ post.data.description }}
+{% endfor %}
 
 {{ content }}
