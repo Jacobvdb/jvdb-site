@@ -1,31 +1,89 @@
 
+:where(:root),
+:host,
+.wa-theme-default,
+.wa-light,
+.wa-dark .wa-invert {
+  /* all CSS custom properties for color, typography, space, etc. */
+}
 
-       /* Light Theme (Default) */
-       :root {
-        --background-color: #ffffff;
-        --text-color: #000000;
-        --link-color: #007bff;
-      }
-      
-      /* Dark Theme */
-      [data-theme="dark"] {
-        --background-color: #121212;
-        --text-color: #ffffff;
-        --link-color: #1e90ff;
-      }
-      
-      /* Apply the theme */
-      body {
-        font-family: var(--wa-font-family-body);
-        font-size: var(--wa-font-size-m);
-        font-weight: var(--wa-font-weight-body);
-        line-height: var(--wa-line-height-normal);
-        color: var(--wa-color-text-normal);
-        background-color: var(--background-color);
-        color: var(--text-color);
-        transition: background-color 0.3s ease, color 0.3s ease;
-      }
-      
-      a {
-        color: var(--link-color);
-      }
+.wa-dark,
+.wa-invert,
+:host-context(.wa-dark) {
+  /* subset of CSS custom properties for a dark color scheme */
+}
+
+
+
+      /* Header Layout */
+.site-header {
+  display: flex;
+  justify-content: space-between; /* Title on the left, menu on the right */
+  align-items: center;            /* Align items vertically */
+  padding: 10px 20px;
+  
+  position: sticky;
+  top: 0;
+
+  z-index: 1000;
+}
+
+/* Title Styling */
+.site-title {
+  font-size: 1.8rem;
+  margin: 0;
+  font-weight: bold;
+  
+}
+
+/* Navigation Menu Layout */
+.nav-menus {
+  display: flex;
+  gap: 15px; /* Space between dropdown menus */
+  align-items: center;
+}
+
+/* Remove the black background on wa-button */
+wa-button {
+  background-color: transparent !important;  /* Remove default background */
+  border: none;                               /* Remove border */
+  padding: 8px 12px;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+
+/* Dropdown Button Styling */
+wa-button a {
+  text-decoration: none;
+  color: inherit;
+  padding: 8px 12px;
+}
+
+
+/* Hover Effect for Menu Items */
+wa-menu-item a:hover {
+  text-decoration: none;
+}
+
+/* Optional: Adjust wa-dropdown alignment */
+wa-dropdown {
+  display: inline-block;
+}
+
+
+
+
+
+@media (max-width: 600px) {
+  .site-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+
+  .nav-menus {
+    flex-direction: column;
+    width: 100%;
+    gap: 10px;
+  }
+}

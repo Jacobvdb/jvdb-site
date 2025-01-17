@@ -1,0 +1,45 @@
+---
+layout: "base.html"
+---
+
+<!-- here goes the menu - footer etc -->
+
+<p> default</p>
+
+<body>
+  
+
+    <header class="site-header">
+        <!-- Left: Site Title -->
+        <h1 class="site-title">Jacob van den Berg</h1>
+      
+        <!-- Right: Navigation Menus -->
+        <nav class="nav-menus">
+          <!-- Home Dropdown -->
+          <wa-dropdown>
+            <wa-button slot="trigger" caret ><a href="/">Home</a></wa-button>
+            <wa-menu>
+              <wa-menu-item value="2024" id="2024">
+                <a href="/posts/2024/">2024</a>
+              </wa-menu-item>
+              <wa-menu-item value="2023" id="2023">
+                <a href="/posts/2023/">2023</a>
+              </wa-menu-item>
+            </wa-menu>
+          </wa-dropdown>
+      
+          <!-- Theme Dropdown -->
+          <wa-dropdown>
+            <wa-button slot="trigger" caret>Theme</wa-button>
+            <wa-menu>
+              <wa-menu-item value="light" id="theme-light">Light <wa-icon name="sun"></wa-icon></wa-menu-item>
+              <wa-menu-item value="dark" id="theme-dark">Dark <wa-icon name="moon"></wa-icon></wa-menu-item>
+              <wa-menu-item value="system" id="theme-system">System <wa-icon name="gear"></wa-icon></wa-menu-item>
+            </wa-menu>
+          </wa-dropdown>
+        </nav>
+      </header>
+
+{{ content }}
+
+</body>

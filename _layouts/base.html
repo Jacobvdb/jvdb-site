@@ -1,4 +1,5 @@
 <!DOCTYPE html>
+<!-- here only load stuff nothing from the screen -->
 <html lang="en">
     <head>
         <meta charset="UTF-8">
@@ -6,6 +7,7 @@
         <title>Jacob van den Berg</title>
         
         <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.8/dist/styles/themes/default.css" />
+        
         <link rel="stylesheet" href="https://early.webawesome.com/webawesome@3.0.0-alpha.8/dist/styles/icons.css">
         <script type="module" src="https://early.webawesome.com/webawesome@3.0.0-alpha.8/dist/webawesome.loader.js"></script>
         
@@ -24,17 +26,6 @@
     </style>
     <p>base</p>
    
-    <body>
-        <header>
-            <wa-dropdown>
-                <wa-button slot="trigger" caret>Theme</wa-button>
-                <wa-menu>
-                  <wa-menu-item value="light" id="theme-light" >Light <wa-icon name="sun"></wa-icon></wa-menu-item>
-                  <wa-menu-item value="Dark" id="theme-dark">Dark <wa-icon name="moon"></wa-icon></wa-menu-item>
-                  <wa-menu-item value="System"id="theme-system">System <wa-icon name="gear"></wa-icon></wa-menu-item>
-                </wa-menu>
-              </wa-dropdown>
-        </header>
 
         {{ content }}
 
