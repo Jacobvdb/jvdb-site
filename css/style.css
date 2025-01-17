@@ -1,19 +1,46 @@
+/* Import WebAwesome themes */
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.9/dist/styles/themes/light.css');
+@import url('https://early.webawesome.com/webawesome@3.0.0-alpha.9/dist/styles/themes/dark.css');
 
+/* Base theme (light) */
 :where(:root),
-:host,
 .wa-theme-default,
-.wa-light,
-.wa-dark .wa-invert {
-  /* all CSS custom properties for color, typography, space, etc. */
+.wa-light {
+  --wa-color-fill-loud: white !important;
+  --wa-color-text-loud: black !important;
+  --wa-accent-fill: white !important;
+  --wa-accent-text: black !important;
+  
+  /* Override accent specific properties */
+  --wa-color-accent-fill: white !important;
+  --wa-color-accent-text: black !important;
+  --wa-color-accent-hover: #f5f5f5 !important;
+  --wa-color-accent-active: #eeeeee !important;
+  --text-color: black !important;
 }
 
-.wa-dark,
-.wa-invert,
-:host-context(.wa-dark) {
-  /* subset of CSS custom properties for a dark color scheme */
+/* Dark theme */
+.wa-dark {
+  --wa-color-fill-loud: #1a1a1a !important;
+  --wa-color-text-loud: white !important;
+  --wa-accent-fill: #1a1a1a !important;
+  --wa-accent-text: white !important;
+  
+  /* Override accent specific properties */
+  --wa-color-accent-fill: #1a1a1a !important;
+  --wa-color-accent-text: white !important;
+  --wa-color-accent-hover: #2a2a2a !important;
+  --wa-color-accent-active: #333333 !important;
+  --text-color: white !important;
 }
 
-
+/* Target WebAwesome components directly */
+wa-button[appearance~="accent"],
+wa-menu-item[appearance~="accent"] {
+  --background-color: var(--wa-color-accent-fill) !important;
+  --color: var(--wa-color-accent-text) !important;
+  --text-color: var(--wa-color-accent-text) !important;
+}
 
       /* Header Layout */
 .site-header {
@@ -43,20 +70,12 @@
   align-items: center;
 }
 
-/* Remove the black background on wa-button */
-wa-button {
-  background-color: transparent !important;  /* Remove default background */
-  border: none;                               /* Remove border */
-  padding: 8px 12px;
-  cursor: pointer;
-  transition: background-color 0.3s ease;
-}
 
 
 /* Dropdown Button Styling */
 wa-button a {
   text-decoration: none;
-  color: inherit;
+  color: inherit !important;
   padding: 8px 12px;
 }
 
