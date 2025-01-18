@@ -2,8 +2,10 @@ const { DateTime } = require("luxon");
 
 module.exports = function(eleventyConfig) {
     eleventyConfig.addPassthroughCopy("favicon.svg");
+    eleventyConfig.addPassthroughCopy("sitemap.xml");
     eleventyConfig.addPassthroughCopy("css");
     eleventyConfig.addPassthroughCopy("js");
+
 
     eleventyConfig.addFilter("formatUTCDate", function(dateObj) {
         return DateTime.fromJSDate(new Date(dateObj), { zone: "utc" }).toFormat("MM-dd-yyyy");
