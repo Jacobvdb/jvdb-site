@@ -3,6 +3,8 @@
   const searchEngineId = "27b1029e2140149c3";  // Replace with your CX ID
 
   document.getElementById('searchBtn').addEventListener('click', function() {
+    document.getElementById('closeBtn').style.display = 'block';
+    document.getElementById('searchBtn').style.display = 'none';
     const query = document.getElementById('searchBox').value;
     searchGoogle(query);
   });
@@ -35,3 +37,21 @@
         console.error('Error:', error);
       });
   }
+
+  document.getElementById('searchBox').addEventListener('keypress', function(event) {
+    if (event.key === 'Enter') {
+
+      document.getElementById('searchBtn').click();
+    }
+  });
+
+ 
+
+  document.getElementById('closeBtn').addEventListener('click', function() {
+    document.getElementById('searchResults').innerHTML = '';
+    document.getElementById('searchBox').placeholder = '...';
+    document.getElementById('searchBox').value = '';                    // Add this line
+     
+    document.getElementById('closeBtn').style.display = 'none';
+    document.getElementById('searchBtn').style.display = 'block';
+  });

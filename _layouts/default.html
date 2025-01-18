@@ -5,36 +5,66 @@ layout: "base.html"
 <!-- here goes the menu - footer etc -->
 
 <p> default</p>
+<style>
+.site-header {
+  position: relative;
+  display: block;
+  width: 100%;
+  align-items: center;
+  justify-content: center;
+}
 
+.search-container {
+  width: 30%;
+  z-index: 2;
+  margin: 0 auto;
+  text-align: center;
+}
+
+.search-results {
+  width: 90%;
+  max-height: 70vh;
+  overflow-y: auto;
+  display: block;
+  z-index: 1;
+  background: transparent;
+  box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+  margin: 0 auto;
+}
+
+.search-results > * {
+  text-align: left;
+  width: 100%;
+  padding: 0.5rem 1rem;
+}
+
+.site-content {
+  margin-top: 1rem;
+  position: relative;
+  z-index: 0;
+}
+</style>
 <body>
   
 
-    <header class="site-header">
-      <!-- Search Bar -->
-      <div class="search-container"></div>
-      <wa-input id="searchBox" placeholder="... " size="medium">
-        <wa-icon-button id="searchBtn" name="search" variant="solid" slot="prefix"></wa-icon-button>
-      
-        
-      </wa-input>
-      </div>
+    <header class="site-header wa-d-flex wa-align-items-center wa-justify-content-center wa-min-vh-100">
+      <wa-layout class="wa-align-items-center wa-justify-content-center wa-w-100">
+        <div class="search-container">
+          <wa-input id="searchBox" placeholder="... " size="medium">
+            <wa-icon-button id="searchBtn" name="search" variant="solid" slot="prefix"></wa-icon-button>
+            <wa-icon-button id="closeBtn" name="close" variant="solid" slot="prefix" style="display: none;"></wa-icon-button>
+          </wa-input>
+        </div>
 
-     
-      
-    
-      <!-- Search Results -->
-      <div id="searchResults"></div>
+        <!-- Search Results -->
+        <div id="searchResults" class="search-results"></div>
+      </wa-layout>
     </header>
-    
-    
-            {{ content }}
+
+    <main class="site-content">
+      {{ content }}
+    </main>
       
-            <script>
-              document.getElementById('searchBox').addEventListener('keypress', function(event) {
-                if (event.key === 'Enter') {
-                  document.getElementById('searchBtn').click();
-                }
-              });
-            </script>
+           
       
 </body>

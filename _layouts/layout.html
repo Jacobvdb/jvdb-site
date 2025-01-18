@@ -6,6 +6,7 @@ layout: "default.html"
    
 <!-- the index listing page -->
 
+
 {% assign sortedPosts = collections.post | sort: "date" | reverse %}
 {% for post in sortedPosts %}
 <a href="{{ post.url }}" class="post-title"><h2>{{ post.data.title }}</h2></a>
