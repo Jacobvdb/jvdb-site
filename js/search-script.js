@@ -1,6 +1,6 @@
 
-  const apiKey = "AIzaSyCmxFUu8zlHdi_fOtHZfAi_Ap8DLZU7Obg";       // Replace with your API Key
-  const searchEngineId = "27b1029e2140149c3";  // Replace with your CX ID
+  const apiKey = "";       // Replace with your API Key
+  const searchEngineId = "";  // Replace with your CX ID
 
   document.getElementById('searchBtn').addEventListener('click', function() {
     document.getElementById('closeBtn').style.display = 'block';
