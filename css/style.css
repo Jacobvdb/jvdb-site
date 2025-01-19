@@ -56,66 +56,19 @@ a {
   color: var(--link-color);
 }
 
-      /* Header Layout */
- 
- 
-.site-header {
-  position: relative;
-  display: block;
-  width: 100%;
-  align-items: center;
-  justify-content: center;
+
+
+/*  default */
+
+.search-wrapper {
+  display: flex;               /* Use Flexbox */
+  justify-content: center;     /* Center horizontally */
+  align-items: center;         /* Center vertically (optional) */
 }
 
-/* Title Styling */
-.site-title {
-  font-size: 1.8rem;
-  margin: 0;
-  font-weight: bold;
-  
-}
-
-/* Navigation Menu Layout */
-.nav-menus {
-  display: flex;
-  gap: 15px; /* Space between dropdown menus */
-  align-items: center;
-}
-
-.post-title {
-  text-decoration: none;
-  color: inherit; /* This will keep the default text color */
-}
-
-.post-title:hover {
-  /* Optional: add hover effect */
-  color: var(--wa-color-gray-70); /* Or any color you prefer */
-}
-
-/* Dropdown Button Styling */
-wa-button a {
-  text-decoration: none;
-  color: inherit !important;
-  padding: 8px 12px;
-}
-
-
-/* Hover Effect for Menu Items */
-wa-menu-item a:hover {
-  text-decoration: none;
-}
-
-/* Optional: Adjust wa-dropdown alignment */
-wa-dropdown {
-  display: inline-block;
-}
-
-/* Search Container Styles */
-.search-container {
-  width: 30%;
-  z-index: 2;
-  margin: 0 auto;
-  text-align: center;
+wa-input {
+  width: 40% !important;
+  max-width: 500px;  
 }
 
 .search-results {
@@ -141,15 +94,31 @@ wa-dropdown {
   z-index: 0;
 }
 
-@media (max-width: 600px) {
-  .site-header {
-    flex-direction: column;
-    align-items: flex-start;
-  }
+/* layout */
 
-  .nav-menus {
-    flex-direction: column;
-    width: 100%;
-    gap: 10px;
-  }
+.post-title {
+  text-decoration: none;
+  color: inherit; /* This will keep the default text color */
 }
+
+.post-title:hover {
+  /* Optional: add hover effect */
+  color: var(--wa-color-gray-70); /* Or any color you prefer */
+}
+
+
+
+
+@media screen and (max-width: 768px) {
+
+  /* default */
+  wa-input {
+    width: 99% !important;
+  }
+ 
+}
+
+
+
+
+

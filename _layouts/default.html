@@ -2,31 +2,30 @@
 layout: "base.html"
 ---
 
+
 <!-- here goes the menu - footer etc -->
 
 <p> default</p>
 
 <body>
-  
-
-    <header class="site-header wa-d-flex wa-align-items-center wa-justify-content-center wa-min-vh-100">
-      <wa-layout class="wa-align-items-center wa-justify-content-center wa-w-100">
-        <div class="search-container">
-          <wa-input id="searchBox" placeholder="... " size="medium">
+ 
+          <div class="search-wrapper">
+          <wa-input id="searchBox" placeholder="... "  class="wa-align-items-center wa-justify-content-center ">
             <wa-icon-button id="searchBtn" name="search" variant="solid" slot="prefix"></wa-icon-button>
             <wa-icon-button id="closeBtn" name="close" variant="solid" slot="prefix" style="display: none;"></wa-icon-button>
           </wa-input>
-        </div>
+          </div>
+        
 
-        <!-- Search Results -->
+        <!-- Search Results --> 
         <div id="searchResults" class="search-results"></div>
-      </wa-layout>
-    </header>
+ 
+    
 
     <main class="site-content">
       {{ content }}
     </main>
-      
+       
            
       
 </body>
